@@ -1,0 +1,84 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #090909;
+}
+
+.container {
+  max-width: 400px;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 6em;
+  margin-bottom: 2rem;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: brightness(120%);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button[type="submit"] {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 10px 20px;
+  background-color:  #e757b0;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: #e783c6;
+}
+
+.error-message {
+  /* display: block; */
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: rgb(247, 223, 243);
+}
+
+.error-input {
+  border-color: red;
+}
+
+.deceased-details {
+  padding: 10px;
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ReactModal__Content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
