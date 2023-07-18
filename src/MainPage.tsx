@@ -82,6 +82,7 @@ const MainPage: React.FC = () => {
       email: email,
       phone: phone,
       user_verified: user_verified,
+      deceased: [0],
     };
 
     try {

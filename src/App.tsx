@@ -1,4 +1,5 @@
 import "./App.css";
+
 import VerificationPage from "./VerificationPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainPage from "./MainPage";

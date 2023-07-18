@@ -25,6 +25,8 @@ const DeceasedDetails: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    let params = new URLSearchParams(window.location.search);
+    let token = params.get("token");
 
     if (!name) {
       console.error("Missing value for 'fullname' field");
@@ -39,6 +41,7 @@ const DeceasedDetails: React.FC = () => {
     formData.append("name", name);
     formData.append("dateOfDeath", dateOfDeath);
     formData.append("photo", photo);
+    formData.append("token", token || "");
 
     try {
       await axios.post("http://localhost:5020/deceased", formData);
