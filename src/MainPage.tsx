@@ -50,7 +50,7 @@ const MainPage: React.FC = () => {
                 <p>Date of Death: {deceased.dateOfDeath}</p>
                 {deceased.photo_id && (
                   <img
-                    src={`http://localhost:5020/get_image/${deceased.photo_id}`}
+                    src={`data:image/jpeg;base64,${deceased.photo_id}`}
                     alt={deceased.name}
                     style={{ width: "100%", height: "auto" }}
                   />
