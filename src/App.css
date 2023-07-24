@@ -148,13 +148,13 @@ button[type="submit"]:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 60px;
 }
 
 .deceased-square {
   width: 200px;
-  height: 200px;
-  border: 1px solid #ccc;
-  padding: 10px;
+  height: 250px;
+  border: 2px solid #cb81ad;
+  padding: 20px;
   text-align: center;
 }

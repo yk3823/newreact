@@ -8,6 +8,7 @@ interface Deceased {
   name: string;
   dateOfDeath: string;
   photo_id: string | null;
+  difference: number;
 }
 
 const MainPage: React.FC = () => {
@@ -48,6 +49,7 @@ const MainPage: React.FC = () => {
               <div key={deceased._id} className="deceased-square">
                 <p>Name: {deceased.name}</p>
                 <p>Date of Death: {deceased.dateOfDeath}</p>
+                <p>Difference: {deceased.difference} days</p>
                 {deceased.photo_id && (
                   <img
                     src={`data:image/jpeg;base64,${deceased.photo_id}`}
