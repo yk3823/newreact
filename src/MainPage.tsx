@@ -28,40 +28,49 @@ const MainPage: React.FC = () => {
       console.error("Error fetching deceased details:", error);
     }
   };
-  const organizeDataIntoColumns = (data: Deceased[]) => {
-    const columns: Deceased[][] = [];
-    for (let i = 0; i < data.length; i += 3) {
-      const columnItems = data.slice(i, i + 3);
-      columns.push(columnItems);
+
+  const organizeDataIntoRows = (data: Deceased[]) => {
+    const rows: Deceased[][] = [];
+    const numberOfRows = Math.ceil(data.length / 3);
+
+    for (let i = 0; i < numberOfRows; i++) {
+      const rowItems = data.slice(i * 3, i * 3 + 3);
+      rows.push(rowItems);
     }
-    return columns;
+
+    return rows;
   };
-  const columnsData = organizeDataIntoColumns(deceasedList);
+
+  const rowData = organizeDataIntoRows(deceasedList);
 
   return (
     <div>
       <h1>Main Page</h1>
       <Link to="/login">Login </Link>
-      <div className="deceased-container">
-        {columnsData.map((column, columnIndex) => (
-          <div key={columnIndex} style={{ flex: 1 }}>
-            {column.map((deceased) => (
-              <div key={deceased._id} className="deceased-square">
-                <p>Name: {deceased.name}</p>
-                <p>Date of Death: {deceased.dateOfDeath}</p>
-                <p>Difference: {deceased.difference} days</p>
-                {deceased.photo_id && (
-                  <img
-                    src={`data:image/jpeg;base64,${deceased.photo_id}`}
-                    alt={deceased.name}
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                )}
-                <hr />
-              </div>
-            ))}
-          </div>
-        ))}
+      <div className="content-container">
+        <div className="image-gallery">
+          {rowData.map((row, rowIndex) => (
+            <div key={rowIndex} className="row">
+              {row.map((deceased) => (
+                <div key={deceased._id} className="deceased-square">
+                  <p>Name: {deceased.name}</p>
+                  <p>Date of Death: {deceased.dateOfDeath}</p>
+                  <p>Difference: {deceased.difference} days</p>
+                  {deceased.photo_id && (
+                    <div className="aspect-ratio-box">
+                      <img
+                        src={`data:image/jpeg;base64,${deceased.photo_id}`}
+                        alt={deceased.name}
+                        className="deceased-image"
+                      />
+                    </div>
+                  )}
+                  <hr />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
