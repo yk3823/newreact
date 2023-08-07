@@ -13,17 +13,19 @@ interface Deceased {
 
 const MainPage: React.FC = () => {
   const [deceasedList, setDeceasedList] = useState<Deceased[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1); // Added state for current page
+  const limit = 6; // Items per page
 
   useEffect(() => {
     fetchDeceasedDetails();
-  }, []);
+  }, [currentPage]); // Rerun effect if currentPage changes
 
   const fetchDeceasedDetails = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5020/get_deceased_details"
+        `http://localhost:5020/get_deceased_details?page=${currentPage}&limit=${limit}`
       );
-      setDeceasedList(response.data);
+      setDeceasedList(response.data.deceased_details);
     } catch (error) {
       console.error("Error fetching deceased details:", error);
     }
@@ -39,6 +41,14 @@ const MainPage: React.FC = () => {
     }
 
     return rows;
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prev) => prev + 1); // Increment the current page
+  };
+
+  const handlePrevious = () => {
+    setCurrentPage((prev) => (prev > 1 ? prev - 1 : 1)); // Decrement the current page but don't go below 1
   };
 
   const rowData = organizeDataIntoRows(deceasedList);
@@ -71,6 +81,12 @@ const MainPage: React.FC = () => {
             </div>
           ))}
         </div>
+      </div>
+      {/* Pagination controls */}
+      <div className="pagination-controls">
+        <button onClick={handlePrevious}>Previous</button>
+        <span>Page {currentPage}</span>
+        <button onClick={handleNext}>Next</button>
       </div>
     </div>
   );
