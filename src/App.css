@@ -39,9 +39,12 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+
+  
 }
 button:hover {
   border-color: #646cff;
+  background-color: #2a2a2a;
 }
 button:focus,
 button:focus-visible {
@@ -92,6 +95,7 @@ img {
   box-shadow: 2px 2px 8px rgba(208, 5, 5, 0.1);
   border-radius: 9px;
   transition: all 0.3s ease;
+  
 }
 .image-gallery {
   grid-template-columns: repeat(3, 1fr);
@@ -103,14 +107,16 @@ img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  
 
 }
 
 .aspect-ratio-box {
   width: 100%;
-  height: 0;
+  height: 100%;
   padding-bottom: 50%; 
   position: relative;
+
   
   
 } 
@@ -119,9 +125,10 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 150%;
   height: 100%;
-  object-fit: contain;
+  /* object-fit: contain; */
+  object-fit: cover;
 } 
 
 .logo {
@@ -177,6 +184,13 @@ button[type="submit"]:hover {
 
 .deceased-details {
   padding: 10px;
+  /* background-color: rgba(0, 0, 0, 0.6);  semi-transparent background */
+  color: white;
+  /* padding: 5px; */
+  border-radius: 8px;
+  margin-top: 10px;
+            
+  
 }
 
 .ReactModal__Overlay {
@@ -202,20 +216,32 @@ button[type="submit"]:hover {
 .deceased-square {
   display: flex;
   flex-direction: column;
-  width: 120px;
-  height: 230px;
-  border-radius: 20px;
+  width: 150px;
+  height: 350px;
+  border-radius: 90px;
   border: 1px solid #fbfbfb;
-  padding: 100px;
+  padding: 120px;
   margin: 20px;
+  
   direction: ltr;
   flex-basis: calc(100% / 9);
   justify-items: center; 
-  /* box-sizing: border-box; */
- 
 
- 
+  /* padding: 0; */
+  border: none;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; */
+
+  
 }
+
+.deceased-details p {
+  font-size: 0.8em; 
+  margin: 9px 0; 
+}
+
 .row {
   display: flex;
   /* flex-direction: row; */

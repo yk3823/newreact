@@ -13,12 +13,16 @@ interface Deceased {
 
 const MainPage: React.FC = () => {
   const [deceasedList, setDeceasedList] = useState<Deceased[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1); // Added state for current page
-  const limit = 6; // Items per page
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const limit = 6;
 
   useEffect(() => {
     fetchDeceasedDetails();
-  }, [currentPage]); // Rerun effect if currentPage changes
+  }, [currentPage]);
+
+  const handleSearchClick = () => {
+    // blabla
+  };
 
   const fetchDeceasedDetails = async () => {
     try {
@@ -44,11 +48,11 @@ const MainPage: React.FC = () => {
   };
 
   const handleNext = () => {
-    setCurrentPage((prev) => prev + 1); // Increment the current page
+    setCurrentPage((prev) => prev + 1);
   };
 
   const handlePrevious = () => {
-    setCurrentPage((prev) => (prev > 1 ? prev - 1 : 1)); // Decrement the current page but don't go below 1
+    setCurrentPage((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
   const rowData = organizeDataIntoRows(deceasedList);
@@ -57,15 +61,19 @@ const MainPage: React.FC = () => {
     <div>
       <h1>Main Page</h1>
       <Link to="/login">Login </Link>
+      <Link to="/contact" className="button">
+        Contact
+      </Link>
+      <button className="search-button" onClick={handleSearchClick}>
+        Search
+      </button>
+
       <div className="content-container">
         <div className="image-gallery">
           {rowData.map((row, rowIndex) => (
             <div key={rowIndex} className="row">
               {row.map((deceased) => (
                 <div key={deceased._id} className="deceased-square">
-                  <p>Name: {deceased.name}</p>
-                  <p>Date of Death: {deceased.dateOfDeath}</p>
-                  <p>Difference: {deceased.difference} days</p>
                   {deceased.photo_id && (
                     <div className="aspect-ratio-box">
                       <img
@@ -75,6 +83,11 @@ const MainPage: React.FC = () => {
                       />
                     </div>
                   )}
+                  <div className="deceased-details">
+                    <p> {deceased.name}</p>
+                    <p>נלב"ע בתאריך: {deceased.dateOfDeath}</p>
+                    <p>Difference: {deceased.difference} days</p>
+                  </div>
                   <hr />
                 </div>
               ))}
@@ -82,7 +95,6 @@ const MainPage: React.FC = () => {
           ))}
         </div>
       </div>
-      {/* Pagination controls */}
       <div className="pagination-controls">
         <button onClick={handlePrevious}>Previous</button>
         <span>Page {currentPage}</span>
