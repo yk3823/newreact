@@ -9,6 +9,7 @@ interface Deceased {
   dateOfDeath: string;
   photo_id: string | null;
   difference: number;
+  hebrew_date: string;
 }
 
 const MainPage: React.FC = () => {
@@ -59,14 +60,15 @@ const MainPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Main Page</h1>
-      <Link to="/login">Login </Link>
+      <Link to="/login"> הרשמה </Link>
       <Link to="/contact" className="button">
-        Contact
+        | קצת עלינו
       </Link>
       <button className="search-button" onClick={handleSearchClick}>
-        Search
+        חיפוש
       </button>
+      <h1>יִזְכּוֹר</h1>
+      <h3>אתר הנצחה </h3>
 
       <div className="content-container">
         <div className="image-gallery">
@@ -85,8 +87,11 @@ const MainPage: React.FC = () => {
                   )}
                   <div className="deceased-details">
                     <p> {deceased.name}</p>
-                    <p>נלב"ע בתאריך: {deceased.dateOfDeath}</p>
-                    <p>Difference: {deceased.difference} days</p>
+                    <p>נלב"ע בתאריך: </p>
+                    <p>{deceased.hebrew_date}</p>
+                    <p>{deceased.dateOfDeath}</p>
+                    {/* <p>Difference: {deceased.difference} days</p> */}
+                    {/* <p>Hebrew Date: {deceased.hebrew_date}</p> */}
                   </div>
                   <hr />
                 </div>
