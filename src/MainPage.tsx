@@ -12,9 +12,29 @@ interface Deceased {
   hebrew_date: string;
 }
 
+const InfoModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  return (
+    <div className="modal-background">
+      <div className="modal-content">
+        <h2 style={{ color: "var(--gray-800)" }}>Welcome to blabla</h2>
+        <p style={{ color: "var(--gray-800)" }}>abaut as...</p>
+        <Link to="/login">
+          <button>הרשמה</button>
+        </Link>
+        <div className="payment-options">
+          <button>לתשלום עבור קדיש ביום האזכרה</button>
+          <button>לתשלום עבור אמירת פרק תהילים </button>
+        </div>
+        <button onClick={onClose}>Close</button>
+      </div>
+    </div>
+  );
+};
+
 const MainPage: React.FC = () => {
   const [deceasedList, setDeceasedList] = useState<Deceased[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [showModal, setShowModal] = useState(true);
   const limit = 6;
 
   useEffect(() => {
@@ -60,7 +80,10 @@ const MainPage: React.FC = () => {
 
   return (
     <div>
-      <Link to="/login"> הרשמה </Link>
+      {showModal && <InfoModal onClose={() => setShowModal(false)} />}
+
+      <Link to="/singup"> הרשמה | </Link>
+      <Link to="/login">התחברות </Link>
       <Link to="/contact" className="button">
         | קצת עלינו
       </Link>
@@ -90,8 +113,6 @@ const MainPage: React.FC = () => {
                     <p>נלב"ע בתאריך: </p>
                     <p>{deceased.hebrew_date}</p>
                     <p>{deceased.dateOfDeath}</p>
-                    {/* <p>Difference: {deceased.difference} days</p> */}
-                    {/* <p>Hebrew Date: {deceased.hebrew_date}</p> */}
                   </div>
                   <hr />
                 </div>
@@ -101,9 +122,9 @@ const MainPage: React.FC = () => {
         </div>
       </div>
       <div className="pagination-controls">
-        <button onClick={handlePrevious}>Previous</button>
+        <button onClick={handlePrevious}>הקודם</button>
         <span>Page {currentPage}</span>
-        <button onClick={handleNext}>Next</button>
+        <button onClick={handleNext}>הבא</button>
       </div>
     </div>
   );
