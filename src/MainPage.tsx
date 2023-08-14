@@ -82,7 +82,7 @@ const MainPage: React.FC = () => {
     <div>
       {showModal && <InfoModal onClose={() => setShowModal(false)} />}
 
-      <Link to="/singup"> הרשמה | </Link>
+      <Link to="/signup"> הרשמה | </Link>
       <Link to="/login">התחברות </Link>
       <Link to="/contact" className="button">
         | קצת עלינו

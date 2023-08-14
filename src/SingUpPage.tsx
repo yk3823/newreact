@@ -9,12 +9,15 @@ const SingUpPage: React.FC = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
   const [date, setDate] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [firstNameError, setFirstNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [showFirstNameError, setShowFirstNameError] = useState(false);
   const [showLastNameError, setShowLastNameError] = useState(false);
+  const [showPasswordError, setShowPasswordError] = useState(false);
   const [showVerificationMessage, setShowVerificationMessage] = useState(false);
 
   useEffect(() => {
@@ -72,6 +75,22 @@ const SingUpPage: React.FC = () => {
 
   const user_verified = false;
 
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setPassword(value);
+
+    if (value.length < 6) {
+      setShowPasswordError(true);
+      setPasswordError("Password must be at least 6 characters long.");
+      setTimeout(() => {
+        setShowPasswordError(false);
+      }, 2000);
+    } else {
+      setShowPasswordError(false);
+      setPasswordError("");
+    }
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -81,6 +100,7 @@ const SingUpPage: React.FC = () => {
       date: formattedDate,
       email: email,
       phone: phone,
+      password: password,
       user_verified: user_verified,
       deceased: [],
     };
@@ -145,6 +165,19 @@ const SingUpPage: React.FC = () => {
         <label>
           Email:
           <input type="email" value={email} onChange={handleEmailChange} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            className={showPasswordError ? "error-input" : ""}
+          />
+          {showPasswordError && (
+            <p className="error-message">{passwordError}</p>
+          )}
         </label>
         <br />
         <label>
