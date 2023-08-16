@@ -11,6 +11,22 @@ interface Deceased {
   difference: number;
   hebrew_date: string;
 }
+interface DeceasedProps {
+  imgSrc: string;
+  name: string;
+  dates: string;
+}
+const Deceased: React.FC<DeceasedProps> = ({ imgSrc, name }) => {
+  return (
+    <div className="deceased-square">
+      <img src={imgSrc} alt={name} className="image" />
+      <div className="overlay">
+        <div className="text">{name}</div>
+        {/* Add any additional details or structure here */}
+      </div>
+    </div>
+  );
+};
 
 const InfoModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
