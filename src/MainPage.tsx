@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./App.css";
+import headerImage from "./lala.jpeg";
 
 interface Deceased {
   _id: string;
@@ -19,6 +20,11 @@ interface DeceasedProps {
 const Deceased: React.FC<DeceasedProps> = ({ imgSrc, name }) => {
   return (
     <div className="deceased-square">
+      <img
+        src="/assets/soul-candle.gif"
+        alt="Soul Candle"
+        className="soul-candle"
+      />
       <img src={imgSrc} alt={name} className="image" />
       <div className="overlay">
         <div className="text">{name}</div>
@@ -97,16 +103,21 @@ const MainPage: React.FC = () => {
   return (
     <div>
       {showModal && <InfoModal onClose={() => setShowModal(false)} />}
+      <img src={headerImage} alt="Header Image" className="header-image" />
+      <div className="topnav">
+        <Link to="/signup"> הרשמה | </Link>
+        <Link to="/login">התחברות </Link>
+        <Link to="/contact" className="button">
+          | קצת עלינו
+        </Link>
 
-      <Link to="/signup"> הרשמה | </Link>
-      <Link to="/login">התחברות </Link>
-      <Link to="/contact" className="button">
-        | קצת עלינו
-      </Link>
-      <button className="search-button" onClick={handleSearchClick}>
-        חיפוש
-      </button>
-      <h1>יִזְכּוֹר</h1>
+        <button className="search-button" onClick={handleSearchClick}>
+          חיפוש
+        </button>
+      </div>
+      <div className="header-strip"></div>
+
+      {/* <h1>יִזְכּוֹר</h1> */}
       <h3>אתר הנצחה </h3>
 
       <div className="content-container">

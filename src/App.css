@@ -9,15 +9,21 @@ body {
   color: var(--foreground-color);
   background-color: var(--background-color);
   background-color: #D8D9DA;
- 
+  margin:25px;
   
 }
+.soul-candle {
+  width: 40px; /* Adjust to your preferred size */
+  margin-right: 10px; /* Space between the GIF and the photo */
+  /* Any other styles you want to apply to the GIF */
+}
+
 .deceased-square {
   box-shadow: 7px 7px 10px rgba(36, 36, 36, 0.1);
   transition: transform 0.3s ease;
 }
 .modal-content {
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 25px rgba(198, 163, 163, 0.1);
 }
 
 .payment-options button {
@@ -60,11 +66,11 @@ body {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #040406;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #0b0b0c;
 }
 
 h1 {
@@ -87,7 +93,7 @@ button {
   
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #010102;
   background-color: #2a2a2a;
 }
 button:focus,
@@ -185,10 +191,6 @@ img {
   
   
 } 
-/* .example-class {
-  background-color: var(--gray-50);
-  color: var(--gray-700);
-} */
 
 
 .aspect-ratio-box img {
@@ -283,6 +285,8 @@ button[type="submit"]:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
+  text-align: center;
+  padding: 10px 20px;
 }
 
 .deceased-square {
@@ -299,6 +303,10 @@ button[type="submit"]:hover {
   justify-items: center; 
   border: none; 
   overflow: hidden; 
+  width: 80%;
+  background-color: rgb(222, 222, 222);
+  box-shadow: 0 4px 8px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* margin-bottom: 70px; */
 }
 
 .deceased-details p {
@@ -318,7 +326,7 @@ button[type="submit"]:hover {
 }
 .search-button {
   position: absolute;
-  /* bottom: 20px; Adjust this value as needed */
+  /* bottom: 20px;  */
   left: 94%;
   /* transform: translateX(-50%); */
 }
@@ -352,3 +360,112 @@ button[type="submit"]:hover {
   gap: 10px;
   flex-direction: column;
 }
+/* General Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #213547;
+  background-color: #D8D9DA;
+  margin: 0;
+  padding: 0;
+}
+
+/* Form Container */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button Styles */
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #646cff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #535bf2;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin: 5px 0;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: #213547;
+  background-color: #D8D9DA;
+  margin: 0;
+  padding: 0;
+  display: flex;              /* Flexbox added to body to center the form container */
+  align-items: center;        /* Vertical centering */
+  justify-content: center;    /* Horizontal centering */
+  height: 100vh;              /* Ensures body takes up full viewport height */
+}
+
+.form-container {
+  width: 300px;              /* Width of the square */
+  height: 300px;             /* Height of the square (same as width for a perfect square) */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;             /* Flexbox added to form-container to structure content */
+  flex-direction: column;    /* Stack children vertically */
+  justify-content: space-between; /* Distribute space between children */
+  align-items: center;       /* Center content horizontally */
+}
+.header-image {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 150px;   
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
