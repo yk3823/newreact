@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./App.css";
 import headerImage from "./lala.jpeg";
+import { MdPayment } from 'react-icons/md';
 
 interface Deceased {
   _id: string;
@@ -17,6 +18,7 @@ interface DeceasedProps {
   name: string;
   dates: string;
 }
+
 const Deceased: React.FC<DeceasedProps> = ({ imgSrc, name }) => {
   return (
     <div className="deceased-square">
@@ -35,6 +37,16 @@ const Deceased: React.FC<DeceasedProps> = ({ imgSrc, name }) => {
 };
 
 const InfoModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  const handlePayment = async (type: string) => {
+    try {
+      const response = await axios.post('https://api.sandbox.paypal.com/v2/checkout/orders', { type });
+      if (response.data && response.data.redirect_url) {
+        window.location.href = response.data.redirect_url;
+      }
+    } catch (error) {
+      console.error("Payment initiation failed:", error);
+    }
+  };
   return (
     <div className="modal-background">
       <div className="modal-content">
@@ -44,8 +56,10 @@ const InfoModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           <button>הרשמה</button>
         </Link>
         <div className="payment-options">
-          <button>לתשלום עבור קדיש ביום האזכרה</button>
-          <button>לתשלום עבור אמירת פרק תהילים </button>
+          <button onClick={() => handlePayment('kaddish')}>
+            <MdPayment size= {24}/>
+            לתשלום עבור קדיש ביום האזכרה</button>
+          <button onClick={() => handlePayment('tehillim')}>לתשלום עבור אמירת פרק תהילים </button>
         </div>
         <button onClick={onClose}>Close</button>
       </div>

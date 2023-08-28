@@ -1,20 +1,24 @@
-
-
-
-h1, h2, h3, button { 
-    font-family: 'Lato', sans-serif;
+h1,
+h2,
+h3,
+button {
+  font-family: 'Lato', sans-serif;
 }
+
 body {
-  font-size: 18px ;
+  font-size: 18px;
   color: var(--foreground-color);
   background-color: var(--background-color);
   background-color: #D8D9DA;
-  margin:25px;
-  
+  margin: 25px;
+
 }
+
 .soul-candle {
-  width: 40px; /* Adjust to your preferred size */
-  margin-right: 10px; /* Space between the GIF and the photo */
+  width: 40px;
+  /* Adjust to your preferred size */
+  margin-right: 10px;
+  /* Space between the GIF and the photo */
   /* Any other styles you want to apply to the GIF */
 }
 
@@ -22,6 +26,7 @@ body {
   box-shadow: 7px 7px 10px rgba(36, 36, 36, 0.1);
   transition: transform 0.3s ease;
 }
+
 .modal-content {
   box-shadow: 0px 5px 25px rgba(198, 163, 163, 0.1);
 }
@@ -69,6 +74,7 @@ a {
   color: #040406;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #0b0b0c;
 }
@@ -76,7 +82,7 @@ a:hover {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  text-align: center; 
+  text-align: center;
 }
 
 button {
@@ -90,12 +96,14 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 
-  
+
 }
+
 button:hover {
   border-color: #010102;
   background-color: #2a2a2a;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -106,9 +114,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #cb1e74;
   }
+
   button {
     background-color: #f9f9f9;
   }
@@ -118,8 +128,9 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color:inherit;
+  background-color: inherit;
 }
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -130,7 +141,7 @@ button:focus-visible {
 }
 
 .content-container {
-  width:95%; 
+  width: 95%;
   padding: 9rem 0;
   background-color: inherit;
   border-radius: 4px;
@@ -138,15 +149,17 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  justify-content: center; /* Horizontal center */
-  height: 100vh; /* Set the height of the container */
-  
+
+  justify-content: center;
+  /* Horizontal center */
+  height: 100vh;
+  /* Set the height of the container */
+
 }
 
 
- h3 {
-  text-align: center; 
+h3 {
+  text-align: center;
   font-size: 1.7em;
   line-height: 1.1;
 }
@@ -158,39 +171,42 @@ img {
   border-radius: 9px;
   transition: all 0.3s ease;
   gap: 10px;
-  
+
 }
+
 .image {
   display: block;
   width: 100%;
   height: auto;
-  position: absolute;  /* Ensure the image covers the entire container */
+  position: absolute;
+  /* Ensure the image covers the entire container */
   top: 0;
   left: 0;
 }
+
 .image-gallery {
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(200px, auto); 
+  grid-auto-rows: minmax(200px, auto);
   gap: 10px;
-  justify-items: center; 
-  direction: rtl; 
+  justify-items: center;
+  direction: rtl;
   justify-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
+
 
 }
 
 .aspect-ratio-box {
   width: 100%;
   height: 100%;
-  padding-bottom: 100%; 
+  padding-bottom: 100%;
   position: relative;
 
-  
-  
-} 
+
+
+}
 
 
 .aspect-ratio-box img {
@@ -201,7 +217,7 @@ img {
   height: auto;
   /* object-fit: contain; */
   object-fit: cover;
-} 
+}
 
 .logo {
   height: 6em;
@@ -209,6 +225,7 @@ img {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: brightness(120%);
 }
@@ -233,12 +250,13 @@ button[type="submit"] {
   margin-top: 2rem;
   width: 100%;
   padding: 10px 20px;
-  background-color:  #e757b0;
+  background-color: #e757b0;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
+
 button[type="submit"]:hover {
   background-color: #e783c6;
 }
@@ -263,8 +281,8 @@ button[type="submit"]:hover {
   margin-top: 10px;
   justify-content: center;
   font-family: 'Lato', sans-serif;
-            
-  
+
+
 }
 
 .ReactModal__Overlay {
@@ -280,6 +298,7 @@ button[type="submit"]:hover {
   padding: 20px;
   border-radius: 4px;
 }
+
 .deceased-container {
   display: flex;
   flex-wrap: wrap;
@@ -300,9 +319,9 @@ button[type="submit"]:hover {
   margin: 20px;
   direction: ltr;
   flex-basis: calc(100% / 9);
-  justify-items: center; 
-  border: none; 
-  overflow: hidden; 
+  justify-items: center;
+  border: none;
+  overflow: hidden;
   width: 80%;
   background-color: rgb(222, 222, 222);
   box-shadow: 0 4px 8px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -310,20 +329,25 @@ button[type="submit"]:hover {
 }
 
 .deceased-details p {
-  font-size: 0.8em; 
-  margin: 9px 0; 
+  font-size: 0.8em;
+  margin: 9px 0;
 }
 
 .row {
   display: flex;
-  
+
 }
+
 .pagination-controls {
   display: flex;
-  justify-content: center; /* Horizontal center */
-  align-items: center; /* Vertical center */
-  margin-top: 50px; /* Add some space between header and pagination */
+  justify-content: center;
+  /* Horizontal center */
+  align-items: center;
+  /* Vertical center */
+  margin-top: 50px;
+  /* Add some space between header and pagination */
 }
+
 .search-button {
   position: absolute;
   /* bottom: 20px;  */
@@ -331,35 +355,124 @@ button[type="submit"]:hover {
   /* transform: translateX(-50%); */
 }
 
+/* Enhanced modal styles */
+
 .modal-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75);
+  /* Darker background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; 
+  z-index: 1000;
+  animation: fadeIn 0.5s;
+  /* Simple fade-in animation */
 }
 
 .modal-content {
   background-color: white;
   padding: 20px;
-  border-radius: 8px;
+  /* More padding for spacious feeling */
+  border-radius: 12px;
+  /* Enhanced border radius */
   width: 70%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  /* Slightly increased gap */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  animation: slideUp 0.5s;
+  /* Simple slide up animation */
 }
+
+/* ... (rest of your styles) ... */
 
 .payment-options {
   display: flex;
-  gap: 10px;
-  flex-direction: column;
+  gap: 15px;
+  flex-direction: row;
+  /* This changes the direction to horizontal */
+  justify-content: center;
+  /* Centers the buttons horizontally */
+  align-items: center;
+  /* Centers the buttons vertically */
+  margin-top: 10px;
 }
+
+/* Style for payment options */
+.payment-options button {
+  width: 100px;
+  /* Or whatever width you prefer */
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* To allow absolute positioning of the icon inside */
+}
+
+/* Sample icon style */
+.payment-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('MdPayment.svg');
+  /* Change to your icon path */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.3s;
+  /* Smooth hover transition */
+}
+
+
+button:hover {
+  /* הבהוב כשנוגעים בפואפ */
+  background-color: var(--gray-800);
+  color: white;
+  transform: scale(1.05);
+
+}
+
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} */
+
 /* General Styles */
 body {
   font-family: 'Lato', sans-serif;
@@ -413,6 +526,7 @@ input[type="submit"]:hover {
   font-size: 14px;
   margin: 5px 0;
 }
+
 body {
   font-family: 'Lato', sans-serif;
   font-size: 15px;
@@ -420,34 +534,46 @@ body {
   background-color: #D8D9DA;
   margin: 0;
   padding: 0;
-  display: flex;              /* Flexbox added to body to center the form container */
-  align-items: center;        /* Vertical centering */
-  justify-content: center;    /* Horizontal centering */
-  height: 100vh;              /* Ensures body takes up full viewport height */
+  display: flex;
+  /* Flexbox added to body to center the form container */
+  align-items: center;
+  /* Vertical centering */
+  justify-content: center;
+  /* Horizontal centering */
+  height: 100vh;
+  /* Ensures body takes up full viewport height */
 }
 
 .form-container {
-  width: 300px;              /* Width of the square */
-  height: 300px;             /* Height of the square (same as width for a perfect square) */
+  width: 300px;
+  /* Width of the square */
+  height: 300px;
+  /* Height of the square (same as width for a perfect square) */
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-  display: flex;             /* Flexbox added to form-container to structure content */
-  flex-direction: column;    /* Stack children vertically */
-  justify-content: space-between; /* Distribute space between children */
-  align-items: center;       /* Center content horizontally */
+  display: flex;
+  /* Flexbox added to form-container to structure content */
+  flex-direction: column;
+  /* Stack children vertically */
+  justify-content: space-between;
+  /* Distribute space between children */
+  align-items: center;
+  /* Center content horizontally */
 }
+
 .header-image {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 150px;   
+  height: 150px;
   display: block;
   object-fit: cover;
   object-position: center;
-  
+
 }
+
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -468,4 +594,3 @@ body {
   background-color: #ddd;
   color: black;
 }
-
